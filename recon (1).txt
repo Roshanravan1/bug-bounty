@@ -1,0 +1,208 @@
+subfinder command
+
+1). subfinder -d example.com
+
+2). subfinder -d example.com -o output.txt
+-----------------------------------------------------------
+
+waybackurls https://xyz.com | tee js
+
+cat js.txt | grep .js
+
+--------------------------------------------------------------------------------------------------------------
+
+httpx command
+
+1). httpx -l targets.txt -o output.txt
+
+2). httpx -l targets.txt -o output.txt -follow-redirects -status-code
+
+3). httpx -l targets.txt -o output.txt -status-code -mc 200
+
+4). httpx -l single_target.txt -o output.txt -status-code -mc 200
+
+----------------------------------------------------------------------
+
+openredirex
+
+1). openredirex
+
+Cat hacking.txt | openredirex
+
+Nano ctrl+o after enter and ctrl+x.
+
+--------------------------------------------------------------------------------------------------------------------
+rustscan
+
+1). rustscan 
+rustscan -a domain name
+ 
+-------------------------------------------------------------------------------------------------------------
+
+google dork via hunting
+
+https://taksec.github.io/google-dorks-bug-bounty/
+
+inurl:index.php?id= site:example.com
+
+---------------------------------------------------------------------------------------------------------------
+@Cookie: user_geo=IN; logged_out_uuid=‹script>alert (document.cookie)</script>
+--------------------------------------------------------------------------------------------------------------
+
+broken link checker
+
+blc https://example.com -ro
+
+--------------------------------------------------------------------------------------------------------------
+
+waymore tool
+
+1). waymore -i redbull.com -mode U
+
+2). waymore -i redbull.com -f -xcc -xav -xus -xvt -l 200 -from 2022
+
+3). waymore -i redbull.com -mode U | unfurl keys | sort -u
+
+cat redbull_subs.txt | waymore
+
+4). waymore -i redbull.com --check-only
+
+--------------------------------------------------------------------------------------------------------------
+
+amass
+
+amass enum -d example.com
+
+--------------------------------------------------------------------------------------------------------------
+
+reconftw
+
+cd reconftw
+
+./reconftw.sh -d dpboss.services -r  
+
+--------------------------------------------------------------------------------------------------------------
+
+nuclie
+
+nuclei -u http://example.com
+
+nuclei -l urls.txt
+
+-----------------------------------------------------------------------------------------------------------
+
+gobuster
+
+gobuster dir  -u www.google.com -w subdirectories-discover
+
+----------------------------------------------------------------------------------------------------------
+
+webcopilote
+
+webcopilot -d bugcrowd.com
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+To run the tool on a target, just use the following command.
+webcopilot -d bugcrowd.com
+
+The -o command can be used to specify an output dir.
+webcopilot -d bugcrowd.com -o bugcrowd
+
+The -s command can be used for only subdomain enumerations (Active + Passive and also get title & screenshots).
+webcopilot -d bugcrowd.com -o bugcrowd -s 
+
+The -t command can be used to add thrads to your scan for faster result.
+webcopilot -d bugcrowd.com -o bugcrowd -t 333 
+
+The -b command can be used for blind xss (OOB), you can get your server from xsshunter or interact
+webcopilot -d bugcrowd.com -o bugcrowd -t 333 -b testServer.xss
+
+The -x command can be used to exclude out of scope domains.
+echo out.bugcrowd.com > excludeDomain.txt
+
+webcopilot -d bugcrowd.com -o bugcrowd -t 333 -x excludeDomain.txt -b testServer.xss
+
+------------------------------------------------------------------------------------------------------------
+
+find vulnerable domain for
+
+subfinder -d example.com -v -o example_subdomain.txt
+subzy run --targets example_subdomain.txt --hide_fails 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+linkfinder
+
+python linkfinder.py -i https://whatsapp.com/ -o cli 
+python linkfinder.py -i https://whatsapp.com/ -o results.html
+python linkfinder.py -i https://whatsapp.com -d
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+google map api key checker
+
+
+python3 maps_api_scanner.py --api-key API_KEY
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+GXSS and dalfox
+
+echo "testphp.vulnweb.com" | waybackurls | httpx -silent | Gxss -c 100 -p Xss | sort -u | dalfox pipe
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+cloudmare
+
+cd cloudmare
+
+python Cloudmare.py -u target.site --bruter -sC -sSh -sSt --host verified.site
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+403jump
+
+  403jump -t domain.com , url 
+  403jump -t https://domain.com -p 127.0.0.1:8080
+  403jump -f domains.txt
+  403jump -c "user_token=hjljkklpo"
+  403jump -r "Myheader: test"
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+pwnXSS
+
+cd pwnxss
+
+python3 pwnxss.py -u http://testphp.vulnweb.com
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+fuff
+
+cd fuff 
+
+directory add karva mate -----> wget github url.
+
+./ffuf -u https://platform.infiniteathlete.ai/FUZZ -w Directories_All.wordlist
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+ghauri
+
+ghauri -u https://biocorellc.com/?id=1 --dbs
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Hostilesubbruteforce
+
+cd Hostilesubbruteforce
+
+ruby sub_brute.rb --fast
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+uniscan -u target url -qweds 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+

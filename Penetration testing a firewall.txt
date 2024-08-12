@@ -1,0 +1,45 @@
+Penetration testing a firewall
+
+ Plan of Action
+
+#### 1. *Pre-Engagement Activities*
+- *Understand the Scope*: Obtain clear guidelines from the bug bounty program regarding what is in scope for testing (e.g., specific IP ranges, firewall rules, etc.).
+- *Legal Authorization*: Ensure you have legal authorization to test the firewall and the necessary permissions from the target organization.
+- *Gather Information*: Collect information about the target network and firewall configurations, such as IP addresses, network topology, and existing security policies.
+
+#### 2. *Reconnaissance*
+- *Passive Reconnaissance*: Gather information without directly interacting with the target. Use tools like WHOIS, DNS enumeration, and OSINT to collect data.
+- *Active Reconnaissance*: Perform network scanning to identify live hosts, open ports, and services running behind the firewall. Use tools like Nmap.
+
+#### 3. *Enumeration*
+- *Port Scanning*: Conduct a detailed port scan to identify all open ports and services. Pay attention to common ports used by firewalls (e.g., TCP 80, 443, 22).
+- *Service Enumeration*: Identify the versions of services and applications running on the open ports. This helps in identifying potential vulnerabilities associated with specific versions.
+
+#### 4. *Vulnerability Assessment*
+- *Firewall Configuration Review*: Analyze the firewall rules and configurations to identify potential weaknesses such as overly permissive rules, misconfigurations, or outdated firmware.
+- *Identify Known Vulnerabilities*: Use vulnerability scanners (e.g., Nessus, OpenVAS) to identify known vulnerabilities in the firewall and associated services.
+
+#### 5. *Exploitation*
+- *Attack Surface Analysis*: Determine the attack surface based on the open ports and services. Focus on potential entry points such as VPN endpoints, web interfaces, and management ports.
+- *Exploitation Techniques*: Attempt to exploit identified vulnerabilities. Common techniques include:
+  - *Firewall Evasion*: Use techniques like fragmentation, obfuscation, or tunneling to bypass firewall rules.
+  - *Service Exploitation*: Exploit vulnerabilities in services running behind the firewall (e.g., web server exploits, database exploits).
+  - *Brute Force and Credential Attacks*: Attempt to gain access using brute force or by exploiting weak/default credentials.
+
+#### 6. *Post-Exploitation*
+- *Privilege Escalation*: If initial access is gained, attempt to escalate privileges to gain deeper access to the network.
+- *Pivoting*: Use the compromised host as a pivot point to explore further into the internal network.
+
+#### 7. *Documentation and Reporting*
+- *Detailed Documentation*: Document all findings, including the methods used, vulnerabilities discovered, and steps taken to exploit them.
+- *Proof of Concept (PoC)*: Provide PoC for each vulnerability, demonstrating the impact and risk.
+- *Mitigation Recommendations*: Offer recommendations to remediate the vulnerabilities identified.
+
+### Tools and Techniques
+- *Nmap*: For port scanning and service enumeration.
+- *Wireshark*: For network traffic analysis.
+- *Metasploit*: For exploitation and post-exploitation activities.
+- *Burp Suite*: For web application testing.
+- *Hydra*: For brute force attacks.
+- *OWASP ZAP*: For web vulnerability scanning.
+- *Kali Linux*: A comprehensive platform with various penetration testing tools.
